@@ -1,7 +1,7 @@
 package com.luv2code.springboot.cruddemo.rest;
 
 import com.luv2code.springboot.cruddemo.entity.Employee;
-import com.luv2code.springboot.cruddemo.service.EmployeeService;
+import com.luv2code.springboot.cruddemo.service.EmpService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -10,10 +10,10 @@ import java.util.List;
 @RestController
 public class EmployeeRest {
 
-    private EmployeeService employeeService;
+    private EmpService employeeService;
 
     @Autowired
-    public EmployeeRest(EmployeeService theEmployeeService) {
+    public EmployeeRest(EmpService theEmployeeService) {
         employeeService = theEmployeeService;
     }
 
