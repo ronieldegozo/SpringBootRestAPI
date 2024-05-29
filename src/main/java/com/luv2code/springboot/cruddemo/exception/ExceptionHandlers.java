@@ -1,6 +1,5 @@
 package com.luv2code.springboot.cruddemo.exception;
 
-import com.luv2code.springboot.cruddemo.dao.EmployeeJpa;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.http.HttpStatus;
