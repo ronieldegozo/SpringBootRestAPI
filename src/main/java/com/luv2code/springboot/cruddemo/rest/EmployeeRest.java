@@ -53,6 +53,28 @@ public class EmployeeRest {
         return dbEmployee;
     }
 
+    //Updating Existing Employee
+    @PutMapping("/employee")
+    public Employee updateEmployee(@RequestBody Employee employee){
+
+        Employee dbEmployee = employeeService.save(employee);
+
+        return dbEmployee;
+    }
+
+    //Delete Existing Employee
+    @DeleteMapping("/employee/{employeeId}")
+    public String deleteEmployee (@PathVariable int employeeId){
+        Employee empId = employeeService.findById(employeeId);
+        //throw exception if null
+        if(empId == null){
+            throw new NotFoundException("Employee id not foundss - " + employeeId);
+        }
+        employeeService.deleteById(employeeId);
+        return "ID : " + employeeId + " Deleted Success!";
+    }
+
+
 }
 
 
