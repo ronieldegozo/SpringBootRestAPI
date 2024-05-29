@@ -1,6 +1,7 @@
 package com.luv2code.springboot.cruddemo.rest;
 
 import com.luv2code.springboot.cruddemo.entity.Employee;
+import com.luv2code.springboot.cruddemo.exception.NotFoundException;
 import com.luv2code.springboot.cruddemo.service.EmpService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -31,7 +32,7 @@ public class EmployeeRest {
         Employee theEmployee = employeeService.findById(employeeId);
 
         if (theEmployee == null) {
-            throw new RuntimeException("Employee id not found - " + employeeId);
+            throw new NotFoundException("Employee id not foundss - " + employeeId);
         }
 
         return theEmployee;
